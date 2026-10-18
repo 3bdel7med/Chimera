@@ -1,8 +1,15 @@
+```markdown
 # Chimera 🧬
 
-An autonomous, AI-powered feature engineering and self-mutating code package designed exclusively for Laravel applications.
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/abdelhmed/chimera.svg?style=flat-square)](https://packagist.org/packages/abdelhmed/chimera)
+[![Total Downloads](https://img.shields.io/packagist/dt/abdelhmed/chimera.svg?style=flat-square)](https://packagist.org/packages/abdelhmed/chimera)
+[![License](https://img.shields.io/packagist/l/abdelhmed/chimera.svg?style=flat-square)](LICENSE.md)
+
+An autonomous, AI-powered feature engineering and self-mutating code package designed exclusively for Laravel applications. 
 
 Powered natively by **Google Gemini API** and AST (`nikic/php-parser`) code analysis, Chimera parses your application architecture, understands existing business logic, and programmatically generates, refactors, and injects full-stack components—from Eloquent models and dynamic migrations to background jobs, Pest tests, and Blade views.
+
+<video src="https://raw.githubusercontent.com/3bdel7med/Chimera/main/assets/chimera-demo-60s-clean.mp4" controls width="100%"></video>
 
 > ⚠️ **Development Tool Only:** Chimera writes PHP files, injects routes, and executes migrations. It explicitly refuses to run in `production` environments. Always review changes before committing.
 
@@ -10,12 +17,12 @@ Powered natively by **Google Gemini API** and AST (`nikic/php-parser`) code anal
 
 ## ✨ Highlights & Architecture
 
-* **Native Google Gemini Integration:** Engineered specifically around Google Gemini's extended context window and fast structured response generation.
-* **Deep AST Codebase Parsing:** Uses `nikic/php-parser` to parse PHP Abstract Syntax Trees. It maps methods, class properties, and Eloquent relationships directly—avoiding fragile regex or crude text replacing.
-* **Smart Context & Token Optimization:** Selects and sanitizes only relevant database schemas, models, and routes before invoking the LLM, reducing token consumption while preventing sensitive file leaks (e.g., `.env`).
-* **Deterministic Multi-Step Execution:** Breaks complex feature prompts (e.g., multi-vendor checkout or dynamic authentication) into phased implementation blueprints covering Models, Migrations, Controllers, Events, Jobs, and Views.
-* **Self-Healing Pest/PHPUnit Tests:** Executes generated tests automatically on isolated SQLite instances and feeds failure traces back into Gemini for auto-correction.
-* **Automated Git Checkpoints & Time Travel:** Auto-commits state before applying changes, allowing seamless single-command rollbacks—including database schema state.
+- **Native Google Gemini Integration:** Engineered specifically around Google Gemini's extended context window and fast structured response generation.
+- **Deep AST Codebase Parsing:** Uses `nikic/php-parser` to parse PHP Abstract Syntax Trees. It maps methods, class properties, and Eloquent relationships directly—avoiding fragile regex or crude text replacing.
+- **Smart Context & Token Optimization:** Selects and sanitizes only relevant database schemas, models, and routes before invoking the LLM, reducing token consumption while preventing sensitive file leaks (e.g., `.env`).
+- **Deterministic Multi-Step Execution:** Breaks complex feature prompts (e.g., multi-vendor checkout or dynamic authentication) into phased implementation blueprints covering Models, Migrations, Controllers, Events, Jobs, and Views.
+- **Self-Healing Pest/PHPUnit Tests:** Executes generated tests automatically on isolated SQLite instances and feeds failure traces back into Gemini for auto-correction.
+- **Automated Git Checkpoints & Time Travel:** Auto-commits state before applying changes, allowing seamless single-command rollbacks—including database schema state.
 
 ---
 
